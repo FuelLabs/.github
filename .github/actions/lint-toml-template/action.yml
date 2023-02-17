@@ -1,9 +1,9 @@
-name: "Lint Toml Files"
+name: "Lint Toml"
+description: "Lints Toml Files"
 
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v3
     - uses: dtolnay/rust-toolchain@master
       with:
         toolchain: ${{ env.RUST_VERSION }}
