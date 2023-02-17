@@ -1,0 +1,16 @@
+name: "Lint Toml Files"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - uses: dtolnay/rust-toolchain@master
+      with:
+        toolchain: ${{ env.RUST_VERSION }}
+    - name: Install Cargo.toml linter
+      uses: baptiste0928/cargo-install@v1
+      with:
+        crate: cargo-sort
+        version: '1.0.9'
+    - name: Run Cargo.toml sort check
+      run: cargo sort -w --check
