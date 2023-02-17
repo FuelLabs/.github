@@ -1,5 +1,5 @@
-name: "Lint Toml"
-description: "Lints Toml Files"
+name: 'Lint Toml'
+description: 'Lints Toml Files'
 
 runs:
   using: "composite"
@@ -14,3 +14,4 @@ runs:
         version: '1.0.9'
     - name: Run Cargo.toml sort check
       run: cargo sort -w --check
+      shell: bash
