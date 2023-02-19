@@ -14,7 +14,6 @@ runs:
   steps:
     - name: Notify if Job Fails
       uses: ravsamhq/notify-slack-action@v2
-      if: always() && github.ref == 'refs/heads/master'
       with:
         status: ${{ job.status }}
         token: ${{ inputs.github_token }}
